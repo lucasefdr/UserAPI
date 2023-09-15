@@ -1,5 +1,6 @@
 using IdentityAPI.Data;
 using IdentityAPI.Models;
+using IdentityAPI.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,18 +8,20 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("AppConnection");
 
 // Add services to the container.
-builder.Services.AddDbContext<AppDbContext>(
-    opts =>
-    {
-        opts.UseMySql(builder.Configuration.GetConnectionString(connectionString),
-            ServerVersion.AutoDetect(connectionString));
-    });
+builder.Services.AddDbContext<AppDbContext>
+    (opts => { opts.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)); });
 
-// Identity configs
+// Identity config
 builder.Services
     .AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
+
+// AutoMapper config
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+// Dependency Injection config
+builder.Services.AddScoped<UserService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

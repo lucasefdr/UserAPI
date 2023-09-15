@@ -1,4 +1,8 @@
-﻿using IdentityAPI.Data.DTOs;
+﻿using AutoMapper;
+using IdentityAPI.Data.DTOs;
+using IdentityAPI.Models;
+using IdentityAPI.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IdentityAPI.Controllers;
@@ -7,9 +11,17 @@ namespace IdentityAPI.Controllers;
 [Route("[controller]")]
 public class UserController : ControllerBase
 {
-    [HttpPost]
-    public IActionResult RegisterUser([FromBody] CreateUserDto userDto)
+    private readonly UserService _service;
+
+    public UserController(UserService service)
     {
-        throw new NotImplementedException(); 
+        _service = service;
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> RegisterUser([FromBody] CreateUserDto userDto)
+    {
+        await _service.Register(userDto);
+        return Ok("User registered.");
     }
 }
