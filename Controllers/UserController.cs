@@ -18,10 +18,17 @@ public class UserController : ControllerBase
         _service = service;
     }
 
-    [HttpPost]
+    [HttpPost("register")]
     public async Task<IActionResult> RegisterUser([FromBody] CreateUserDto userDto)
     {
         await _service.Register(userDto);
         return Ok("User registered.");
+    }
+
+    [HttpPost("login")]
+    public async Task<IActionResult> Login(LoginUserDto userDto)
+    {
+        await _service.Login(userDto);
+        return Ok("User authenticad");
     }
 }
