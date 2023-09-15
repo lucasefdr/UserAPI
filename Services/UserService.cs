@@ -10,12 +10,15 @@ public class UserService
     private readonly IMapper _mapper;
     private readonly UserManager<User> _userManager;
     private readonly SignInManager<User> _signInManager;
+    private readonly TokenService _tokenService;
 
-    public UserService(IMapper mapper, UserManager<User> userManager, SignInManager<User> signInManager)
+    public UserService(IMapper mapper, UserManager<User> userManager, SignInManager<User> signInManager,
+        TokenService tokenService)
     {
         _mapper = mapper;
         _userManager = userManager;
         _signInManager = signInManager;
+        _tokenService = tokenService;
     }
 
     public async Task Register(CreateUserDto userDto)
@@ -30,11 +33,20 @@ public class UserService
         if (!result.Succeeded) throw new ApplicationException("Register error");
     }
 
-    public async Task Login(LoginUserDto userDto)
+    public async Task<string> Login(LoginUserDto userDto)
     {
         // username, password, cookie, fail
         var result = await _signInManager.PasswordSignInAsync(userDto.Username, userDto.Password, false, false);
 
         if (!result.Succeeded) throw new ApplicationException("Login error");
+
+        var user = _signInManager
+            .UserManager
+            .Users
+            .FirstOrDefault(user => user.NormalizedUserName == userDto.Username.ToUpper());
+
+        var token = _tokenService.GenerateToken(user);
+
+        return token;
     }
 }
