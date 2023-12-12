@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\wsLucas\\IdentityAPI\\IdentityAPI.csproj": {}
+    "C:\\wsLucas\\UserAPI\\IdentityAPI.csproj": {}
   },
   "projects": {
-    "C:\\wsLucas\\IdentityAPI\\IdentityAPI.csproj": {
+    "C:\\wsLucas\\UserAPI\\IdentityAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\wsLucas\\IdentityAPI\\IdentityAPI.csproj",
+        "projectUniqueName": "C:\\wsLucas\\UserAPI\\IdentityAPI.csproj",
         "projectName": "IdentityAPI",
-        "projectPath": "C:\\wsLucas\\IdentityAPI\\IdentityAPI.csproj",
+        "projectPath": "C:\\wsLucas\\UserAPI\\IdentityAPI.csproj",
         "packagesPath": "C:\\Users\\lucas.eferreira\\.nuget\\packages\\",
-        "outputPath": "C:\\wsLucas\\IdentityAPI\\obj\\",
+        "outputPath": "C:\\wsLucas\\UserAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

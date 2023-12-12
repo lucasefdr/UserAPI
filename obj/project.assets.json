@@ -2100,11 +2100,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\wsLucas\\IdentityAPI\\IdentityAPI.csproj",
-      "projectName": "IdentityAPI",
-      "projectPath": "C:\\wsLucas\\IdentityAPI\\IdentityAPI.csproj",
+      "projectUniqueName": "C:\\wsLucas\\UserAPI\\UserAPI.csproj",
+      "projectName": "UserAPI",
+      "projectPath": "C:\\wsLucas\\UserAPI\\UserAPI.csproj",
       "packagesPath": "C:\\Users\\lucas.eferreira\\.nuget\\packages\\",
-      "outputPath": "C:\\wsLucas\\IdentityAPI\\obj\\",
+      "outputPath": "C:\\wsLucas\\UserAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

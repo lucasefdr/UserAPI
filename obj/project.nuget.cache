@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+CCBQBK5EoIxgCJ56S0pZaFBCjrvMhoJ1vVzHBXfceFvnjtP/KdcohIYNzHkq4C+UVcoZpj6B1Y8j6E6eHjU2Q==",
+  "dgSpecHash": "NWyvBDRlx0kK89qWggrtRTif4qSCu0PXnLJ39w/kIF8FKl9RJVRyqObFkNq0Zvt+Gbmb6c3BTokiISLZLm/61Q==",
   "success": true,
-  "projectFilePath": "C:\\wsLucas\\IdentityAPI\\IdentityAPI.csproj",
+  "projectFilePath": "C:\\wsLucas\\UserAPI\\UserAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lucas.eferreira\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\lucas.eferreira\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
